@@ -1,6 +1,7 @@
 
 ## Estrutura da aplicação:
 
+```
 .
 ├── deployements
 │   ├── db.yaml
@@ -18,3 +19,4 @@
     └── vote.yaml
 
 3 directories, 11 files
+```
