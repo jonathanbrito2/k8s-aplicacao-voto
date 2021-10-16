@@ -29,11 +29,11 @@ jobs:
           namespace: |
             vote  
           manifests: |
-            ./deployments/db.yaml
-            ./deployments/redis.yaml
-            ./deployments/result.yaml
-            ./deployments/vote.yaml
-            ./deployments/worker2.yaml
+            ./deployments/deploy-db.yaml
+            ./deployments/deploy-redis.yaml
+            ./deployments/deploy-result.yaml
+            ./deployments/deploy-vote.yaml
+            ./deployments/deploy-worker2.yaml
             ./services/db.yaml
             ./services/redis.yaml
             ./services/result.yaml
