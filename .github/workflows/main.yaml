@@ -29,5 +29,13 @@ jobs:
           namespace: |
             vote  
           manifests: |
-            ./deployment.yaml
+            ./deployments/db.yaml
+            ./deployments/redis.yaml
+            ./deployments/result.yaml
+            ./deployments/vote.yaml
+            ./deployments/worker2.yaml
+            ./services/db.yaml
+            ./services/redis.yaml
+            ./services/result.yaml
+            ./services/vote.yaml
       
