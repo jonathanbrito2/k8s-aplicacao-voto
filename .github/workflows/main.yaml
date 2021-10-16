@@ -1,0 +1,33 @@
+
+name: CD
+
+on:  
+  push:
+    branches: [ main ]
+  
+  workflow_dispatch:
+
+jobs:
+        
+  CD:
+ 
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        
+      - name: Kubernetes set context
+        uses: Azure/k8s-set-context@v1.1
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.K8S_CONFIG }}
+      
+      - name: Deploy to Kubernetes cluster
+        uses: Azure/k8s-deploy@v1.3
+        with: 
+          
+          namespace: |
+            vote  
+          manifests: |
+            ./deployment.yaml
+      
