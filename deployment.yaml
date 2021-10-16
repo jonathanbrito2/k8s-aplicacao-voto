@@ -6,7 +6,7 @@ metadata:
   name: db
   namespace: vote
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: db
@@ -47,7 +47,7 @@ metadata:
   name: redis
   namespace: vote
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: redis
@@ -81,7 +81,7 @@ metadata:
   name: vote
   namespace: vote
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: vote
@@ -109,7 +109,7 @@ metadata:
   name: worker
   namespace: vote
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: worker
