@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+  generation: 1
+  labels:
+    cattle.io/creator: norman
+  managedFields:
+  - apiVersion: networking.k8s.io/v1beta1
+    fieldsType: FieldsV1
+    manager: nginx-ingress-controller
+    operation: Update
+  - apiVersion: extensions/v1beta1
+    fieldsType: FieldsV1
+    manager: rancher
+    operation: Update
+  name: voto
+  namespace: vote
+spec:
+  rules:
+  - host: voto.marcusoft.com.br
+    http:
+      paths:
+      - backend:
+          serviceName: vote
+          servicePort: 5000
+        pathType: ImplementationSpecific
+status:
+  loadBalancer:
+    ingress:

@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+  generation: 1
+  labels:
+    cattle.io/creator: norman
+  managedFields:
+  - apiVersion: networking.k8s.io/v1beta1
+    fieldsType: FieldsV1
+    manager: nginx-ingress-controller
+    operation: Update
+  - apiVersion: extensions/v1beta1
+    fieldsType: FieldsV1
+    manager: rancher
+  name: resultado
+  namespace: vote
+  
+spec:
+  rules:
+  - host: resultado.marcusoft.com.br
+    http:
+      paths:
+      - backend:
+          serviceName: result
+          servicePort: 5001
+        pathType: ImplementationSpecific
+status:
+  loadBalancer:
+    ingress:
