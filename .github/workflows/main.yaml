@@ -38,4 +38,6 @@ jobs:
             ./services/redis.yaml
             ./services/result.yaml
             ./services/vote.yaml
+            ./ingress/ingress-voto.yaml
+            ./ingress/ingress-resultado.yaml
       
